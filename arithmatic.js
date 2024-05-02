@@ -285,3 +285,40 @@ console.log(post);
 // tooltip shows when we hover over the object 
 
  
+// Adding Element 
+// push use to add number in end
+// splice use to add number in middile
+// upShift use to add number at beginning 
+
+
+// element Finding  primitive type
+// using indexOf and lastIndexOf 
+
+const numbers = [1,2,3,1,4,3];
+
+console.log(numbers.indexOf(1,2));
+console.log(numbers.lastIndexOf(1));
+
+console.log(numbers.indexOf(1) !== -1);
+
+// includes can also be used to check the element in array 
+
+console.log(numbers.includes(3));
+
+
+// finding element reference type
+// it will return when it will find the element and if did not get that object then it will return undefined
+
+ const courses = [
+    {id : 1, name : 'a'},
+    {id : 2, name : 'b'},
+ ];
+ const course = courses.find(function(course) {
+    return course.name === 'a';
+
+ }
+   
+);
+ console.log(course);
+
+
