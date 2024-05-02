@@ -137,7 +137,7 @@ function showNumber(num){
 
 // Object is not itterable 
 
-// for-of  loop i sto make object itterable 
+// for-of  loop is use to make object itterable 
 
 // cloning an object 
 
@@ -159,18 +159,18 @@ function showNumber(num){
   
 // there is one another method object.assign
 
-const circle = {
-    radius : 1,
-    draw (){
-        console.log('draw');
-    }
-};
+// const circle = {
+//     radius : 1,
+//     draw (){
+//         console.log('draw');
+//     }
+// };
 
-const another = Object.assign({
-    color : 'Red'
-},circle);
+// const another = Object.assign({
+//     color : 'Red'
+// },circle);
 
-console.log(another);
+// console.log(another);
 
 
 // more simpler way to cloan the object spread operater ...
@@ -183,5 +183,105 @@ const circle = {
 };
 const another = {...circle};
 
-console.log('another');
+console.log(another);
 
+// string primitive
+
+const message = 'My Name Is Nitin Singh';
+
+// string object 
+const Any = new String ('hi');
+
+
+// Template Literals 
+
+const mes =
+`This is my 
+First Message`;
+
+//Exercise Address
+
+let address = {
+    street :'Ambedkar nagar ',
+    city : 'Rewa',
+    zipcode : '486226'
+     
+};
+
+function showAddress (address) {
+     for (let key in address)
+        console.log(key,address[key]);
+}
+showAddress(address);
+
+// use factory and constructer function 
+
+ // Factory Function 
+
+ let address1 =createAddress('a','b','c');
+ console.log(address1);
+
+ //factory function 
+ function createAddress(street,city,zipcode) {
+    return {
+        street,
+        city,
+        zipcode
+    };
+ }
+
+ // constructer function 
+ let address2 = new Address2('a','b','c');
+ console.log(address2);
+
+ function Address2(street,city,zipcode){
+    this.street = street;
+    this.city = city;
+    this.zipcode = zipcode;
+ }
+
+
+ // Blog Post Object ............
+
+
+ // title 
+ // body 
+ // auhtor 
+ // views 
+ // comments 
+ // (author , 'body)
+// isLive
+
+let post  = {
+    title  : 'a',
+    body : 'b',
+    auhthor : 'c',
+    views : 10,
+    comments : [
+        {aughtor : 'a', body : 'b'},
+        {aughtor : 'c', body : 'd'},
+    ],
+    isLive : true
+
+};
+console.log(post);
+
+//  consturcter Function 
+
+  let post1 = new Post('a','b','c');
+  console.log(post1);
+
+
+  function Post(title,body,author){
+    this.title = title;
+    this.body = body;
+    this.author = author;
+    this.views = 0;
+    this.comments = [];
+    this.isLive = false;
+  }
+
+  // price range 
+// tooltip shows when we hover over the object 
+
+ 
