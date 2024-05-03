@@ -321,4 +321,101 @@ console.log(numbers.includes(3));
 );
  console.log(course);
 
+ // Arrow Function 
 
+ const courses1 = [
+    {id : 1, name : 'a'},
+    {id : 2, name : 'b'},
+ ];
+
+ const course2 = courses1.find(course2 => course2.name === 'b');
+ console.log(course2);
+
+
+// iteration of an array 
+const number1 = [1,2,3];
+for (let number of number1)
+ console.log(number);
+number1.forEach(number => console.log(number));
+
+// joining array 
+
+const numb = [1,2,3];
+const joined = numb.join(',');
+console.log(joined);
+// seprating The Array 
+const sms = 'My name is Nitin Singh';
+const part = sms.split(' ');
+console.log(part);
+
+const attach = part.join(' ');
+console.log(attach);
+
+
+//  sorting An Array 
+
+ const sub = [
+    {id : 1 ,name : 'Node.js' },
+    {id : 2 , name : 'javascript'}
+ ];
+
+ sub.sort(function(a,b){
+
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+ });
+ console.log(sub);
+
+// Testing the element of an array ....................
+//......................................................
+ // every() used to check to see if every element in a given array matches the given critaria 
+ // some() checks to see if we have atleast one element that matches the given critaria.
+
+
+ // filtering an array based on search..............................
+ // .................................................
+
+ const number3 = [1,2,3,-1];
+//  const filtered = number3.filter(function(value){
+//     return value >= 0;
+//  });
+
+ //another way to do by using arrow function 
+
+ const filtered = number3.filter(n => n >=0);
+ // mapping an array 
+
+ const items = filtered.map(n =>({value : n}) );
+ console.log(items);
+
+ 
+// Mapping An Array ...................................
+//.....................................................
+
+// const items = filtered.map(value =>({n : value}) );
+
+
+const number4 = [1,2,3,4,-1];
+const item= number4
+    .filter(n => n >= 0)
+    .map(n => ({value : n}))
+    .filter(obj => obj.value >1)
+    .map(obj => obj.value);
+
+console.log(item);
+  
+// redusing an array --------------------------------------------------------
+
+const  number5 = [1,2,3,4,-2];
+
+const sum = number5.reduce (
+    (accumulator,currentValue) => accumulator + currentValue);
+// let sum = 0;
+// for (let n of number5) 
+//     sum += n;
+
+console.log(sum);
