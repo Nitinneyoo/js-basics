@@ -419,3 +419,136 @@ const sum = number5.reduce (
 //     sum += n;
 
 console.log(sum);
+
+
+// The rest Operator -----------------------------------------
+//(...restoperator)
+
+function add (...args) {
+    return args.reduce((a, b) => a + b);
+}
+console.log(add(1,2,3,4,5,10));
+
+
+// Discount on any product ---------------------------------
+
+function dis(discount, ...prices) {
+    const totaldis = prices.reduce((a, b) => a +b);
+    return totaldis * (1 - discount);
+}
+
+console.log(dis(0.2,20,60));
+
+
+// default parameter ----------------------------------------------------------
+function interest(principal, rate, years) {
+    rate = rate || 3.5;
+    years = years || 5;
+
+    return principal * rate / 100 * years; 
+}
+console.log(interest(10000));
+
+
+// Getters and Setters --------------------------------------
+// -----------------------------------------------------------
+// getters => access properties
+// setters => change (mutate) them 
+ 
+// const identity= {
+//     firstName : 'Nitin',
+//     lastName : 'Singh',
+//     get fullName() {
+//         return `${identity.firstName} ${identity.lastName}`;
+//     },
+//     set fullName(value){
+//         const between = value.split(' ');
+//         this.firstName = between [0];
+//         this.lastName = between [1];
+//     }
+// };
+
+// identity.fullName = 'Ashwani Gupta';
+
+// console.log(identity);
+
+
+// Error Handling --------------------------------------------------------------
+
+// if we did not pass any value object to 
+// identity.fullName = 'null;
+// then we have to use the error handling above the code
+
+// const identity= {
+//     firstName : 'Nitin',
+//     lastName : 'Singh',
+//     set fullName(value){
+//         if (typeof value !== 'string') return ;
+
+
+//         const between = value.split(' ');
+//         this.firstName = between [0];
+//         this.lastName = between [1];
+//     }
+// };
+
+// identity.fullName = null;
+
+// console.log(identity);
+
+// throw an error  try and catch
+
+// const identity= {
+//     firstName : 'Nitin',
+//     lastName : 'Singh',
+//     set fullName(value){
+//         if (typeof value !== 'string')
+//             throw new Error('Value is not a String.') ;
+
+
+//         const between = value.split(' ');
+//         this.firstName = between [0];
+//         this.lastName = between [1];
+//     }
+// };
+
+// try {
+//     identity.fullName = null;
+// }
+// catch (e) {
+//     alert(e);
+// }
+
+// console.log(identity);
+
+// Local variable / function take precedance over global function / variable
+// --------------------------------------------------------------------------------
+
+
+// let vs var
+// ------------------------------------------------------------------------------------------
+
+//var ==> crreate function-scoped variable
+// ES6 (ES2015): let, const => block-scoped variable
+
+
+
+// This Keyword --=> The object that is executing the current Function
+// If the function is the part of the object then we call it method 
+
+const video = {
+    title : 'a',
+    play(){
+        console.log(this);
+    }
+};
+video.stop = function (){
+    console.log(this);
+};
+video.stop();
+
+
+
+// If that function is regular function 
+
+
